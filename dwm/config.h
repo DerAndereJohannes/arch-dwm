@@ -68,6 +68,8 @@ static const char *volup[] = { "amixer", "-q", "sset", "Master", "5%+", NULL };
 static const char *volmute[] = { "amixer" , "-D", "pulse", "sset", "Master", "toggle", NULL };
 static const char *micmute[] = { "amixer", "sset", "Capture", "toggle", NULL };
 static const char *prtsc[] = { "flameshot", "gui", NULL };
+static const char *brightdown[] = { "xbacklight", "-dec", "5" };
+static const char *brightup[] = { "xbacklight", "-inc", "5" };
 
 #include "shiftview.c"
 #include <X11/XF86keysym.h>
@@ -96,8 +98,10 @@ static Key keys[] = {
 	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
-	{ MODKEY,                       XK_h,   shiftview,      {.i = -1 } },
-	{ MODKEY,                       XK_l,  shiftview,      {.i = +1 } },
+	{ MODKEY,                       XK_h,      shiftview,      {.i = -1 } },
+	{ MODKEY,                       XK_l,      shiftview,      {.i = +1 } },
+	{ MODKEY,                       XK_F11,    spawn,          {.v = brightdown} },
+	{ MODKEY,                       XK_F12,    spawn,          {.v = brightup} },
 	{ 0,                            XK_Print,  spawn,          {.v = prtsc } },
 	{ 0,                            XF86XK_AudioLowerVolume, spawn, {.v = voldown } },
 	{ 0,                            XF86XK_AudioRaiseVolume, spawn, {.v = volup } },
