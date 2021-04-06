@@ -71,7 +71,7 @@ static const struct arg args[] = {
 	{ run_command, " %4s || ", "amixer sget Master | awk -F\"[][]\" '/%/ { print $2 }' | head -n1"},
 	{ cpu_perc, "CPU   %s%% || ", NULL },
 	{ ram_perc, "RAM   %s%% || ", NULL },
-	{ run_command, " %-.2s%% || ", "xbacklight -get" },
+	{ run_command, " %-.3s%% || ", "xbacklight -get" },
 	{ battery_state, "%s ", "BAT0"},
 	{ battery_perc, " %s%% || ", "BAT0"},
 	{ datetime, "%s",           "%F %T" },
