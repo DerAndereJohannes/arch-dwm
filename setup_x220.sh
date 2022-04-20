@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/bin/bash
 
 # setup
 mkdir git && cd git
@@ -11,7 +11,7 @@ sudo pacman --noconfirm -S git vim mani feh xrandr flameshot xorg-xbacklight ttf
 
 # yay
 git clone https://aur.archlinux.org/yay-git && cd yay-git
-makepkg -si --no-confirm
+makepkg -si --noconfirm
 
 
 # suckless download
