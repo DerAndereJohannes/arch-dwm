@@ -66,13 +66,14 @@ static const char unknown_str[] = "n/a";
 static const struct arg args[] = {
 	/* function format          argument */
 	/*{ netspeed_rx, " %sB/s @ ", "wlp3s0" },*/
-	{ wifi_essid, " %s ", "wlp3s0"},
-	{ wifi_perc, "%s%% || ", "wlp3s0" },
-	{ run_command, " %4s || ", "amixer sget Master | awk -F\"[][]\" '/%/ { print $2 }' | head -n1"},
-	{ cpu_perc, "CPU   %s%% || ", NULL },
-	{ ram_perc, "RAM   %s%% || ", NULL },
-	{ run_command, " %-.3s%% || ", "xbacklight -get" },
-	{ battery_state, "%s ", "BAT0"},
-	{ battery_perc, " %s%% || ", "BAT0"},
+	{ wifi_essid, " %s ", "wlp3s0" },
+	{ wifi_perc, "%s%% | ", "wlp3s0" },
+	{ run_command, " %4s | ", "amixer sget Master | awk -F\"[][]\" '/%/ { print $2 }' | head -n1" },
+	{ run_command, "%s | ", "keyboard-lang" },
+	{ cpu_perc, "  %s%% | ", NULL },
+	{ ram_perc, "  %s%% | ", NULL },
+	{ run_command, " %-.3s%% | ", "xbacklight -get" },
+	{ battery_state, "%s ", "BAT0" },
+	{ battery_perc, " %s%% | ", "BAT0" },
 	{ datetime, "%s",           "%F %T" },
 };

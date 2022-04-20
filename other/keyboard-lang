@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+input_method=$(gdbus call -e -d org.fcitx.Fcitx -o "/inputmethod" -m "org.fcitx.Fcitx.InputMethod.GetCurrentIM")
+
+if [ "${input_method}" == "('mozc',)" ]; then
+	echo "日本語"
+	#echo "あ"
+else
+	echo "ローマ"
+	#echo "A"
+fi
